@@ -98,20 +98,24 @@ clearGridButton.addEventListener('click', () => {
 
 eraseBtn.addEventListener('click', () => {
 	erase = true;
+	eraseBtn.classList.add('pressed');
+	paintBtn.classList.remove('pressed');
 });
 
 paintBtn.addEventListener('click', () => {
 	erase = false;
+	eraseBtn.classList.remove('pressed');
+	paintBtn.classList.add('pressed');
 });
 
 gridWidth.addEventListener('input', () => {
 	widthValue.innerHTML =
-		gridWidth.value < 9 ? `0${gridWidth.value}` : gridWidth.value;
+		gridWidth.value < 10 ? `0${gridWidth.value}` : gridWidth.value;
 });
 
 gridHeight.addEventListener('input', () => {
 	heightValue.innerHTML =
-		gridHeight.value < 9 ? `0${gridHeight.value}` : gridHeight.value;
+		gridHeight.value < 10 ? `0${gridHeight.value}` : gridHeight.value;
 });
 
 window.onload = () => {
